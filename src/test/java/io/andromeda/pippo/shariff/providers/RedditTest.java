@@ -1,5 +1,6 @@
-package com.headissue.sharecount.provider;
+package io.andromeda.pippo.shariff.providers;
 
+import com.headissue.sharecount.proxy.ShariffBackendConfiguration;
 import org.junit.Test;
 
 import java.io.BufferedReader;
@@ -14,7 +15,7 @@ public class RedditTest {
   @Test
   public void testParseCount() throws Exception {
     String json = "{\"kind\": \"Listing\", \"data\": {\"modhash\": \"\", \"children\": [1,2,3], \"after\": null, \"before\": null}}";
-    ShareCountProvider p = new Reddit();
+    ShareCountProvider p = new Reddit(new ShariffBackendConfiguration());
     int count = p.parseCount(json);
     assertEquals(3, count);
   }

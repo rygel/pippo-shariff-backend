@@ -19,64 +19,68 @@ import java.io.IOException;
 
 public class ProviderRequest {
 
-  String queryUrl;
+    static ShariffBackendConfiguration configuration;
+    String queryUrl;
 
-  private static  CacheSource<String,String> shareCountSource =
-    new CacheSource<String, String>() {
-      @Override
-      public String get(String o) throws Throwable {
-        return new ProviderRequest(o).execute();
-      }
-    };
+    private static CacheSource<String, String> shareCountSource =
+            new CacheSource<String, String>() {
+                @Override
+                public String get(String o) throws Throwable {
+                    return new ProviderRequest(configuration, o).execute();
+                }
+            };
 
-  public static Cache<String,String> cache = CacheBuilder
-    .newCache(String.class, String.class)
-    .source(shareCountSource)
-    .name(ProviderRequest.class)
-    .expiryDuration(Config.getInstance().getCacheExpiryMilliSeconds(), TimeUnit.MILLISECONDS)
-    .maxSize(Config.getInstance().getCacheSize())
-    .build();
+    public static Cache<String, String> cache;
 
-  public ProviderRequest(String queryUrl) {
-    this.queryUrl = queryUrl;
-  }
+    public ProviderRequest(ShariffBackendConfiguration configuration, String queryUrl) {
+        this.configuration = configuration;
+        this.queryUrl = queryUrl;
 
-  public String execute() throws IOException {
-    RequestConfig config = RequestConfig.custom()
-        .setConnectTimeout(3000)
-        .setConnectionRequestTimeout(3000)
-        .setSocketTimeout(3000)
-        .build();
-    CloseableHttpClient httpclient = HttpClients.custom().setDefaultRequestConfig(config).build();
-    try {
-      HttpGet httpget = new HttpGet(queryUrl);
-      httpget.addHeader("User-Agent", getUserAgent());
-      httpget.addHeader("Connection", "Keep-Alive");
-
-      ResponseHandler<String> responseHandler = new ResponseHandler<String>() {
-
-        public String handleResponse(
-            final HttpResponse response) throws IOException {
-          int status = response.getStatusLine().getStatusCode();
-          if (status >= 200 && status < 300) {
-            HttpEntity entity = response.getEntity();
-            return entity != null ? EntityUtils.toString(entity) : null;
-          } else {
-            throw new ClientProtocolException("Unexpected response status: " + status);
-          }
-        }
-
-      };
-      return httpclient.execute(httpget, responseHandler);
-    } catch (ClientProtocolException e) {
-      e.printStackTrace();
-    } finally {
-      httpclient.close();
+        cache = CacheBuilder
+                .newCache(String.class, String.class)
+                .source(shareCountSource)
+                .name(ProviderRequest.class)
+                .expiryDuration(configuration.getCacheExpiryMilliSeconds(), TimeUnit.MILLISECONDS)
+                .maxSize(configuration.getCacheSize())
+                .build();
     }
-    return null;
-  }
 
-  protected String getUserAgent() {
-    return "sharecountbot (" + Config.getInstance().getMaintainer() + ")";
-  }
+    public String execute() throws IOException {
+        RequestConfig config = RequestConfig.custom()
+                .setConnectTimeout(3000)
+                .setConnectionRequestTimeout(3000)
+                .setSocketTimeout(3000)
+                .build();
+        CloseableHttpClient httpclient = HttpClients.custom().setDefaultRequestConfig(config).build();
+        try {
+            HttpGet httpget = new HttpGet(queryUrl);
+            httpget.addHeader("User-Agent", getUserAgent());
+            httpget.addHeader("Connection", "Keep-Alive");
+
+            ResponseHandler<String> responseHandler = new ResponseHandler<String>() {
+
+                public String handleResponse(
+                        final HttpResponse response) throws IOException {
+                    int status = response.getStatusLine().getStatusCode();
+                    if (status >= 200 && status < 300) {
+                        HttpEntity entity = response.getEntity();
+                        return entity != null ? EntityUtils.toString(entity) : null;
+                    } else {
+                        throw new ClientProtocolException("Unexpected response status: " + status);
+                    }
+                }
+
+            };
+            return httpclient.execute(httpget, responseHandler);
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } finally {
+            httpclient.close();
+        }
+        return null;
+    }
+
+    protected String getUserAgent() {
+        return "sharecountbot (" + configuration.getMaintainer() + ")";
+    }
 }

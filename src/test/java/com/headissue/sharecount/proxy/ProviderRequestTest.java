@@ -1,6 +1,6 @@
 package com.headissue.sharecount.proxy;
 
-import com.headissue.sharecount.provider.SlowServer;
+import io.andromeda.pippo.shariff.providers.SlowServer;
 import org.junit.Test;
 
 import java.net.SocketTimeoutException;
@@ -20,14 +20,14 @@ public class ProviderRequestTest {
     }
 
     try {
-      new ProviderRequest(server.address).execute();
+      new ProviderRequest(new ShariffBackendConfiguration(), server.address).execute();
       fail("Expected timeout did not occur");
     } catch (SocketTimeoutException e) {}
   }
 
   @Test
   public void testUserAgent() {
-    ProviderRequest r = new ProviderRequest("");
+    ProviderRequest r = new ProviderRequest(new ShariffBackendConfiguration(), "");
     assertEquals("sharecountbot (https://github.com/headissue/shariff-backend-java)",r.getUserAgent());
   }
 }

@@ -1,5 +1,7 @@
-package com.headissue.sharecount.provider;
+package io.andromeda.pippo.shariff.providers;
 
+import com.headissue.sharecount.proxy.ShariffBackendConfiguration;
+import io.andromeda.pippo.shariff.providers.GooglePlus;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -19,7 +21,7 @@ public class GooglePlusTest {
             "} " +
           "}" +
         "]";
-  int count = new GooglePlus().parseCount(json);
+  int count = new GooglePlus(new ShariffBackendConfiguration()).parseCount(json);
   assertEquals(3, count);
   }
 }

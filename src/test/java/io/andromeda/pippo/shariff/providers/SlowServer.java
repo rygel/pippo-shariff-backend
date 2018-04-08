@@ -1,4 +1,4 @@
-package com.headissue.sharecount.provider;
+package io.andromeda.pippo.shariff.providers;
 
 import org.apache.http.HttpException;
 import org.apache.http.HttpRequest;
