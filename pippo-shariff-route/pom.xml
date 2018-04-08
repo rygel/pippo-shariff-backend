@@ -5,11 +5,11 @@
     <parent>
         <artifactId>pippo-shariff-parent</artifactId>
         <groupId>io.andromeda.pippo</groupId>
-        <version>0.5-SNAPSHOT</version>
+        <version>0.5</version>
     </parent>
 
     <artifactId>pippo-shariff-route</artifactId>
-    <version>0.5-SNAPSHOT</version>
+    <version>0.5</version>
     <description>An implementation of the Shariff Backend as a Pippo Route.</description>
 
     <properties>
