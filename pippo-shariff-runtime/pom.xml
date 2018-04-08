@@ -10,43 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>pippo-shariff-runtime</artifactId>
     <version>0.11-SNAPSHOT</version>
-    <description />
+    <description>An example Pippo Shariff Runtime.</description>
     <url>https://github.com/rygel/andromeda-tools</url>
-
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <id>abrandt</id>
-            <name>Alexander Brandt</name>
-            <email>rygel@andromeda.io</email>
-            <url>http:/andromeda.io</url>
-            <roles>
-                <role>architect</role>
-                <role>developer</role>
-            </roles>
-            <timezone>Europe/Berlin</timezone>
-        </developer>
-    </developers>
-
-    <repositories>
-        <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -56,7 +21,6 @@
     </properties>
 
     <dependencies>
-
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -95,8 +59,16 @@
         </dependency>
     </dependencies>
 
-
-  <scm>
-    <tag>release-0.6</tag>
-  </scm>
+    <repositories>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
