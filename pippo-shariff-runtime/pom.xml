@@ -4,12 +4,12 @@
     <parent>
         <artifactId>pippo-shariff-parent</artifactId>
         <groupId>io.andromeda.pippo</groupId>
-        <version>0.9</version>
+        <version>0.10-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>pippo-shariff-runtime</artifactId>
-    <version>0.9</version>
+    <version>0.10-SNAPSHOT</version>
     <description />
     <url>https://github.com/rygel/andromeda-tools</url>
 
@@ -97,6 +97,6 @@
 
 
   <scm>
-    <tag>release-0.9</tag>
+    <tag>release-0.6</tag>
   </scm>
 </project>
