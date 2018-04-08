@@ -6,6 +6,7 @@
     <artifactId>pippo-shariff-parent</artifactId>
     <version>0.9-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <name>pippo-shariff-parent</name>
     <description>An implementation of the Shariff Backend as a Pippo Route.</description>
     <url>https://github.com/rygel/pippo-shariff-backend</url>
 
