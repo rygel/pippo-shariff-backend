@@ -4,13 +4,13 @@
     <parent>
         <artifactId>pippo-shariff-parent</artifactId>
         <groupId>io.andromeda.pippo</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.5-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>pippo-shariff-runtime</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <description></description>
+    <version>0.5-SNAPSHOT</version>
+    <description />
 
     <repositories>
         <repository>
