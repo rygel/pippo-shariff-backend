@@ -6,6 +6,37 @@
     <artifactId>pippo-shariff-parent</artifactId>
     <version>0.7-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <description>An implementation of the Shariff Backend as a Pippo Route.</description>
+    <url>https://github.com/rygel/pippo-shariff-backend</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>abrandt</id>
+            <name>Alexander Brandt</name>
+            <email>rygel@andromeda.io</email>
+            <url>http:/andromeda.io</url>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>Europe/Berlin</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/rygel/pippo-shariff-backend.git</connection>
+        <developerConnection>scm:git:https://github.com/rygel/pippo-shariff-backend.git</developerConnection>
+        <url>scm:git:git@github.com/rygel/pippo-shariff-backend.git</url>
+        <tag>release-0.5</tag>
+    </scm>
 
     <properties>
         <pippo.version>1.2.0</pippo.version>
@@ -15,75 +46,6 @@
         <coveralls.version>3.1.0</coveralls.version>
         <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
     </properties>
-
-    <!--
-    <dependencies>
-        <dependency>
-            <groupId>ro.pippo</groupId>
-            <artifactId>pippo-core</artifactId>
-            <version>${pippo.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>ro.pippo</groupId>
-            <artifactId>pippo-pebble</artifactId>
-            <version>${pippo.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>ro.pippo</groupId>
-            <artifactId>pippo-undertow</artifactId>
-            <version>${pippo.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20140107</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.3.5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.3.5</version>
-            <classifier>tests</classifier>
-            <scope>test</scope>
-        </dependency>
-      <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-all</artifactId>
-        <version>1.7</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.cache2k</groupId>
-        <artifactId>cache2k-api</artifactId>
-        <version>0.20</version>
-      </dependency>
-      <dependency>
-        <groupId>org.cache2k</groupId>
-        <artifactId>cache2k-core</artifactId>
-        <version>0.20</version>
-        <scope>runtime</scope>
-      </dependency>
-    </dependencies>
-    -->
 
     <modules>
         <module>pippo-shariff-runtime</module>
@@ -114,13 +76,6 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
     </distributionManagement>
-
-    <scm>
-        <connection>scm:git:https://github.com/rygel/andromeda-tools.git</connection>
-        <developerConnection>scm:git:https://github.com/rygel/pippo-shariff-backend</developerConnection>
-        <url>scm:git:git@github.com/rygel/pippo-shariff-backend</url>
-        <tag>release-0.5</tag>
-    </scm>
 
     <build>
         <plugins>

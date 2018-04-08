@@ -9,10 +9,12 @@
     </parent>
 
     <artifactId>pippo-shariff-route</artifactId>
+    <packaging>jar</packaging>
     <version>0.7-SNAPSHOT</version>
     <description>An implementation of the Shariff Backend as a Pippo Route.</description>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <pippo.version>1.2.0</pippo.version>
         <fragments.version>0.0.21</fragments.version>
         <slf4j.version>1.7.25</slf4j.version>
@@ -116,8 +118,8 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:git:https://github.com/rygel/andromeda-tools.git</connection>
-        <developerConnection>scm:git:https://github.com/rygel/pippo-shariff-backend</developerConnection>
+        <connection>scm:git:https://github.com/rygel/pippo-shariff-backend.git</connection>
+        <developerConnection>scm:git:https://github.com/rygel/pippo-shariff-backend.git</developerConnection>
         <url>scm:git:git@github.com/rygel/pippo-shariff-backend</url>
         <tag>release-0.5</tag>
     </scm>

@@ -11,6 +11,29 @@
     <artifactId>pippo-shariff-runtime</artifactId>
     <version>0.7-SNAPSHOT</version>
     <description />
+    <url>https://github.com/rygel/andromeda-tools</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>abrandt</id>
+            <name>Alexander Brandt</name>
+            <email>rygel@andromeda.io</email>
+            <url>http:/andromeda.io</url>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>Europe/Berlin</timezone>
+        </developer>
+    </developers>
 
     <repositories>
         <repository>
