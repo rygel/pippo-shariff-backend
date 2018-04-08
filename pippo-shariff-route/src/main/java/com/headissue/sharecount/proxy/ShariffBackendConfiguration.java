@@ -23,7 +23,7 @@ public class ShariffBackendConfiguration {
     String facebookApplicationID = "";
     String facebookApplicationSecret = "";
 
-    String maintainer = "https://github.com/headissue/shariff-backend-java";
+    String maintainer = "https://github.com/rygel/pippo-shariff-backend";
     String domainList = ".*";
     int cacheSize = 1000;
     long cacheExpiryMilliSeconds = 1000L * 60 * 5;

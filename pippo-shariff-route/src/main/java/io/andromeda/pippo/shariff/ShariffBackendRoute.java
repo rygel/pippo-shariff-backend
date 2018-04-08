@@ -56,7 +56,7 @@ public class ShariffBackendRoute extends RouteGroup {
 
         if (!shariffBackendConfiguration.getFacebookApplicationID().equals("")) {
             try {
-                String facebookCredentials = String.format("&s|&s", shariffBackendConfiguration.getFacebookApplicationID(),
+                String facebookCredentials = String.format("%s|%s", shariffBackendConfiguration.getFacebookApplicationID(),
                         shariffBackendConfiguration.getFacebookApplicationID());
                 String urlEncodedFacebookCredentials = URLEncoder.encode(facebookCredentials, "UTF-8");
                 String facebookQueryString = String.format(Facebook.QUERY_URL, urlEncodedFacebookCredentials);
@@ -84,8 +84,7 @@ public class ShariffBackendRoute extends RouteGroup {
                 // access to root will displays a welcome page
                 routeContext.send("\"Hello!\\nshariff-backend-java is running.\\n\" +\n" +
                         "        \"Request the sharecounts like: /?url=http://example.com\\n\\n\" +\n" +
-                        "        \"~~~\\nhttps://github.com/headissue/shariff-backend-java\"");
-                return;
+                        "        \"~~~\\nhttps://github.com/rygel/pippo-shariff-backend\"");
             } else {
                 try {
                     validateUrl(forUrl);
@@ -99,11 +98,8 @@ public class ShariffBackendRoute extends RouteGroup {
                 routeContext.setHeader("Access-Control-Allow-Origin", "*");
                 routeContext.setHeader("Access-Control-Expose-Headers", "Content-Type");
                 routeContext.json().send(json);
-
             }
-            //routeContext.render("index", globalContext);
         });
-
     }
 
     /**
