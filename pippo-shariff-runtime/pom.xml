@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>pippo-shariff-runtime</artifactId>
     <version>0.12-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <description>An example Pippo Shariff Runtime.</description>
     <url>https://github.com/rygel/andromeda-tools</url>
 
